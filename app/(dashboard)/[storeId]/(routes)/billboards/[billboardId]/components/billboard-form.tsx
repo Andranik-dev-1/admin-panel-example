@@ -62,8 +62,11 @@ const BillboardForm = ({ initialData }: BillboardFormProps) => {
   const onSubmit = async (data: BillboardFormValues) => {
     try {
       setLoading(true);
-      if(initialData) {
-        await axios.patch(`/api/${params.storeId}/billboards/${params.billboardId}`, data);
+      if (initialData) {
+        await axios.patch(
+          `/api/${params.storeId}/billboards/${params.billboardId}`,
+          data
+        );
       } else {
         await axios.post(`/api/${params.storeId}/billboards`, data);
       }
@@ -80,17 +83,21 @@ const BillboardForm = ({ initialData }: BillboardFormProps) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
+      await axios.delete(
+        `/api/${params.storeId}/billboards/${params.billboardId}`
+      );
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
-      toast.success('Billboard deleted.');
+      toast.success("Billboard deleted.");
     } catch (error: any) {
-      toast.error('Make sure you removed all categories using this billboard first.');
+      toast.error(
+        "Make sure you removed all categories using this billboard first."
+      );
     } finally {
       setLoading(false);
       setOpen(false);
     }
-  }
+  };
 
   return (
     <>

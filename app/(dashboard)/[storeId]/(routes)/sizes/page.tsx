@@ -4,7 +4,7 @@ import prismadb from "@/lib/prismadb";
 
 // import { BillboardColumn } from "./components/columns";
 import { SizesClient } from "./components/client";
-import { SizesColumn } from "./components/columns";
+import { SizeColumn } from "./components/columns";
 import { format } from "date-fns";
 
 const SizesPage = async ({ params }: { params: { storeId: string } }) => {
@@ -17,7 +17,7 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
     },
   });
 
-  const formattedSizes: SizesColumn[] = sizes.map((item) => ({
+  const formattedSizes: SizeColumn[] = sizes.map((item) => ({
     id: item.id,
     name: item.name,
     value: item.value,

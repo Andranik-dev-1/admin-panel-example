@@ -6,12 +6,12 @@ import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Heading from "@/components/ui/heading";
-import { SizesColumn, columns } from "./columns";
+import { SizeColumn, columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { ApiList } from "@/components/ui/api-list";
 
 interface SizesClientProps {
-  data: SizesColumn[];
+  data: SizeColumn[];
 }
 
 export const SizesClient = ({ data }: SizesClientProps) => {
